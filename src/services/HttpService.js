@@ -22,7 +22,6 @@ class Http {
         });
 
         this.instance.interceptors.request.use(...interceptorsRequest);
-        this.instance.interceptors.response.use(...interceptorsResponse);
     }
 
     static createInstance() {
