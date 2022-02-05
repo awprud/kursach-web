@@ -24,6 +24,7 @@ const SignInModal = ({isOpen, toggle, setUser}) => {
                                 });
 
                                 toggle();
+                                window.location.reload();
                             })
                     }}
                     initialValues={{

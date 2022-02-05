@@ -13,6 +13,13 @@
     justify-content: space-between;
 }
 
+.list-card-manager input {
+    font-size: 22px;
+    margin-right: 20px;
+    width: 50px;
+    text-align: center;
+}
+
 .book-info {
     margin-left: 10px;
     font-size: 22px;

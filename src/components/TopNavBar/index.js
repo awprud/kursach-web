@@ -31,6 +31,7 @@ const TopNavBar = () => {
                             onClick={() => {
                                 AuthService.signOut()
                                 setUser(null);
+                                window.location.reload();
                             }}
                             className="logout-button"
                         >
