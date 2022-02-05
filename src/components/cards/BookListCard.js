@@ -1,7 +1,7 @@
 import React from 'react';
 import "./index.css";
 
-const ManagerListCard = ({role, manager}) => {
+const BookListCard = ({role, book}) => {
     return (
         <div className="list-card-manager">
 
@@ -9,4 +9,4 @@ const ManagerListCard = ({role, manager}) => {
     )
 }
 
-export default ManagerListCard;
+export default BookListCard;

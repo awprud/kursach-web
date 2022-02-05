@@ -1,11 +1,17 @@
 import React from 'react';
 import "./index.css";
-import ManagerListCard from "../components/cards/ManagerListCard";
+import BookListCard from "../components/cards/BookListCard";
+import {booksAvailable} from '../mok/apiMokTemp';
+import {roleGuest} from "../constants";
 
 const LandingPage = () => {
     return (
         <div className="page-landing">
-            <ManagerListCard />
+            {booksAvailable.map((book) => {
+                return (
+                    <BookListCard book={book} role={roleGuest} />
+                )
+            })}
         </div>
     )
 }

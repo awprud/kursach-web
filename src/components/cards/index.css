@@ -2,5 +2,10 @@
     width: 100%;
     height: 100px;
     background-color: azure;
-    padding: 9px 16px ;
+    padding: 9px 16px;
+
+    display: flex;
+    flex-direction: row;
+
+    margin-bottom: 20px;
 }
