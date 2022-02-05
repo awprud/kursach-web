@@ -5,32 +5,49 @@
     top: 0;
     width: 100%;
     height: 50px;
+    color: white;
+    direction: rtl;
 }
 
-.navigation-element {
-    margin: auto;
-    display: inline;
-    align-content: center;
-    text-align: center;
-    padding: 14px 16px;
-    top: 14px;
-    width: 100%;
+.login-button {
+    margin-right: 40px;
+    margin-top: 7px;
+    background-color: azure;
+    width: 130px;
+    font-size: 16px;
+    border: none;
+}
+
+.signup-button {
+    margin-top: 7px;
+    font-size: 16px;
+    margin-right: 65px;
+    background-color: azure;
+    width: 130px;
+    border: none;
+}
+
+.logout-button {
+    margin-right: 65px;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    margin-top: 7px;
+    height: auto;
+    border: none;
+}
+
+.logout-button:hover {
+    text-decoration: underline;
     cursor: pointer;
 }
 
-.navigation-element a {
-    text-decoration: none;
-    color: #f2f2f2;
-}
-
-/* Change background on mouse-over */
-.navigation-element:hover {
-    transition: color, background-color 700ms;
-    background-color: #ddd;
-}
-
-.navigation-element:hover a {
-    color: black;
+.username {
+    margin-top: 12px;
+    margin-right: 15px;
+    font-size: 18px;
+    color: azure;
+    text-decoration: underline;
 }
 
 .main {

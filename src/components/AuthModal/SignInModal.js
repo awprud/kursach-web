@@ -4,7 +4,7 @@ import AuthService from "../../services/AuthService";
 import "./index.css";
 import Modal from "../Modal/Modal";
 
-const SignInModal = ({isOpen, toggle}) => {
+const SignInModal = ({isOpen, toggle, setUser}) => {
     return (
         <Modal
             isOpen={isOpen}
@@ -17,7 +17,14 @@ const SignInModal = ({isOpen, toggle}) => {
                             password,
                             email
                         })
-                            .then(toggle)
+                            .then((data) => {
+                                setUser({
+                                    token: data?.token,
+                                    ...data?.user
+                                });
+
+                                toggle();
+                            })
                     }}
                     initialValues={{
                         password: "",

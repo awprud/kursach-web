@@ -13,7 +13,6 @@ class AuthService extends Http {
         return this
             .post('/user/auth', model)
             .then(({data}) => {
-                console.log(data)
                 this.storeUser(data.user, data.token);
                 return data;
             });
@@ -32,7 +31,6 @@ class AuthService extends Http {
     }
 
     storeUser(user, token) {
-        console.log(user, token)
         window.localStorage.setItem('user', JSON.stringify(user));
         token && window.localStorage.setItem('access_token', token);
     }
