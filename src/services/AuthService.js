@@ -4,7 +4,7 @@ class AuthService extends Http {
     getUser() {
         return {
             token: window.localStorage.getItem('access_token'),
-            ...window.localStorage.getItem('user')
+            ...JSON.parse(window.localStorage.getItem('user') || "{}")
         };
     }
 
@@ -12,7 +12,8 @@ class AuthService extends Http {
         this.clearUser();
         return this
             .post('/user/auth', model)
-            .then((data) => {
+            .then(({data}) => {
+                console.log(data)
                 this.storeUser(data.user, data.token);
                 return data;
             });
@@ -31,7 +32,8 @@ class AuthService extends Http {
     }
 
     storeUser(user, token) {
-        window.localStorage.setItem('user', user);
+        console.log(user, token)
+        window.localStorage.setItem('user', JSON.stringify(user));
         token && window.localStorage.setItem('access_token', token);
     }
 
