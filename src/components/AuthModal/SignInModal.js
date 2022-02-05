@@ -17,6 +17,7 @@ const SignInModal = ({isOpen, toggle}) => {
                             password,
                             email
                         })
+                            .then(toggle)
                     }}
                     initialValues={{
                         password: "",
@@ -24,10 +25,13 @@ const SignInModal = ({isOpen, toggle}) => {
                     }}
                 >
                     <Form className="auth-form">
+                        <h2>Sign In!</h2>
+                        <label>Email</label>
                         <Field
                             type="text"
                             name="email"
                         />
+                        <label>Password</label>
                         <Field
                             type="text"
                             name="password"
@@ -36,6 +40,12 @@ const SignInModal = ({isOpen, toggle}) => {
                             type="submit"
                         >
                             Login
+                        </button>
+                        <button
+                            type="reset"
+                            onClick={toggle}
+                        >
+                            Cancel
                         </button>
                     </Form>
                 </Formik>
