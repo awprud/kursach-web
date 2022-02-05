@@ -2,9 +2,14 @@ import axios from "axios";
 
 const interceptorsRequest = [
     request => {
-        const {accessToken} = window.localStorage.getItem('access_token');
+        const access_token = window.localStorage.getItem('access_token');
+
+        if(!access_token) {
+            return request;
+        }
+
         request.headers = {
-            Authorization: accessToken ? `Bearer ${accessToken}` : "",
+            Authorization: access_token ? `Bearer ${access_token}` : "",
         };
 
         return request;
@@ -54,7 +59,7 @@ Http.api = {
 };
 
 Http.versions = {
-    v1: 'v1'
+    v1: 'v1.2'
 };
 
 export default Http;

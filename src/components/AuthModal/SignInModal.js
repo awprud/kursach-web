@@ -8,7 +8,6 @@ const SignInModal = ({isOpen, toggle}) => {
     return (
         <Modal
             isOpen={isOpen}
-            toggle={toggle}
             className="modal-auth"
         >
                 <Formik
@@ -24,7 +23,7 @@ const SignInModal = ({isOpen, toggle}) => {
                         email: "",
                     }}
                 >
-                    <Form>
+                    <Form className="auth-form">
                         <Field
                             type="text"
                             name="email"
@@ -33,6 +32,11 @@ const SignInModal = ({isOpen, toggle}) => {
                             type="text"
                             name="password"
                         />
+                        <button
+                            type="submit"
+                        >
+                            Login
+                        </button>
                     </Form>
                 </Formik>
         </Modal>
