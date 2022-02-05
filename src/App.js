@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import React from "react";
 import TopNavBar from "./components/TopNavBar";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <BrowserRouter>
           <TopNavBar/>
           <Routes>
-            <Route path="/" element={<div/>}/>
+            <Route path="/" element={<LandingPage/>}/>
             <Route path="/ask" element={<div/>}/>
             <Route path="/purchase/" element={<div/>}/>
           </Routes>
