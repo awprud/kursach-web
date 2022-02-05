@@ -8,4 +8,21 @@
     flex-direction: row;
 
     margin-bottom: 20px;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.book-info {
+    margin-left: 10px;
+    font-size: 22px;
+}
+
+.book-price {
+    font-size: 22px;
+    margin-right: 20px;
+}
+
+.purchase-button {
+    font-size: 20px;
 }

@@ -21,7 +21,6 @@ class AuthService extends Http {
     register(model) {
         return this.post('/user', model)
             .then((registeredUser) => {
-                this.storeUser(registeredUser.data);
                 return registeredUser;
             });
     }

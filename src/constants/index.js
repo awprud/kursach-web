@@ -1,3 +1,3 @@
-export const roleGuest = "guest";
-export const roleUser = "user";
-export const roleAdmin = "admin";
+export const roleGuest = "Guest";
+export const roleUser = "User";
+export const roleAdmin = "Admin";
