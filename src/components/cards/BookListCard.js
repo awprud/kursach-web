@@ -3,7 +3,7 @@ import "./index.css";
 import {roleAdmin, roleUser} from "../../constants";
 import BooksService from "../../services/BooksService";
 
-const BookListCard = ({user, book, handleEdit}) => {
+const BookListCard = ({user, book, handleEdit, handleOrder}) => {
     return (
         <div className="list-card-manager">
             <div>
@@ -31,8 +31,9 @@ const BookListCard = ({user, book, handleEdit}) => {
                                         quantity: count,
                                         book: book.id,
                                         user: user.id,
-                                    }).then((data) => {
-                                        // TODO: handle success
+                                    }).then(() => {
+                                        window.scroll({top: 0})
+                                        handleOrder();
                                     });
                                 }}
                             >
