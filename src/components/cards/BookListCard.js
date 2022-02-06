@@ -9,7 +9,7 @@ const BookListCard = ({user, book}) => {
             <div>
                 <span className="book-info">{book.name} •</span>
                 <span className="book-info">{book.year} •</span>
-                <span className="book-info">{book.pagesCount} •</span>
+                <span className="book-info">{book.pages} •</span>
                 <span className="book-info">{book.description}</span>
             </div>
             <div>

@@ -1,4 +1,5 @@
 import Http from "./HttpService";
+import {booksAvailable} from "../mok/apiMokTemp";
 
 class BooksService extends Http {
     BASE_URL = "/book";
@@ -18,6 +19,30 @@ class BooksService extends Http {
 
     makeOrder(dto) {
         return this.post(this.ORDER_URL, dto);
+    }
+
+    getOrdersList() {
+        // TODO
+        //return this.get(`${this.ORDER_URL}/all`);
+        return [
+            {
+                book: booksAvailable[3],
+                status: 'Pending'
+            },
+            {
+                book: booksAvailable[2],
+                status: 'Done'
+            },
+            {
+                book: booksAvailable[4],
+                status: 'Done'
+            },
+            {
+                book: booksAvailable[1],
+                status: 'Pending'
+            },
+
+        ]
     }
 }
 

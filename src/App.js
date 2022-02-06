@@ -7,10 +7,9 @@ import {
 import React from "react";
 import TopNavBar from "./components/TopNavBar";
 import LandingPage from "./pages/LandingPage";
-import AuthService from "./services/AuthService";
+import MyOrdersPage from "./pages/MyOrdersPage";
 
 function App() {
-
 
     return (
         <div>
@@ -18,8 +17,7 @@ function App() {
                 <TopNavBar />
                 <Routes>
                     <Route path="/" element={<LandingPage/>}/>
-                    <Route path="/ask" element={<div/>}/>
-                    <Route path="/purchase/" element={<div/>}/>
+                    <Route path="/my-orders" element={<MyOrdersPage/>}/>
                 </Routes>
             </BrowserRouter>
         </div>

@@ -3,3 +3,9 @@
     background-color: #333333;
     height: 100%;
 }
+
+.page-orders h1 {
+    color: azure;
+    font-weight: 400;
+    font-size: 40px;
+}

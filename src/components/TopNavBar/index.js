@@ -3,6 +3,7 @@ import "./index.css"
 import SignInModal from "../AuthModal/SignInModal";
 import useModal from "../../hooks/useModal";
 import AuthService from "../../services/AuthService";
+import {Link} from "react-router-dom";
 
 const TopNavBar = () => {
     const {isOpen, toggle} = useModal();
@@ -38,6 +39,7 @@ const TopNavBar = () => {
                             Log out
                         </button>
                         <span className="username">{user.username}</span>
+                        <Link to="/my-orders/">Personal page</Link>
                     </>
                 )}
             </div>
