@@ -41,3 +41,29 @@
 .purchase-button {
     font-size: 20px;
 }
+
+.filters-wr {
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border: 2px azure solid;
+    width: fit-content;
+}
+
+.filters-wr > div {
+    padding: 10px;
+    color: #333333;
+    background-color: azure;
+}
+
+.inactive:hover {
+    cursor: pointer;
+    color: azure;
+    background-color: transparent;
+}
+
+.filters-wr > .active {
+    color: azure;
+    background-color: transparent;
+}
