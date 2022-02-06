@@ -31,7 +31,7 @@ const TopNavBar = () => {
                             Sign up
                         </button>
                         <button onClick={toggle} className="login-button">
-                            Log in
+                            Sign in
                         </button>
                     </>
                 ) : (

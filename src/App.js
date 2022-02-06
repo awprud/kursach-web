@@ -7,8 +7,6 @@ import {
 import React from "react";
 import TopNavBar from "./components/TopNavBar";
 import LandingPage from "./pages/LandingPage";
-import MyOrdersPage from "./pages/MyOrdersPage";
-import AdminOrdersPage from "./pages/AdminOrdersPage";
 
 function App() {
 
@@ -18,8 +16,8 @@ function App() {
                 <TopNavBar />
                 <Routes>
                     <Route path="/" element={<LandingPage/>}/>
-                    <Route path="/my-orders" element={<MyOrdersPage/>}/>
-                    <Route path="/dashboard-orders" element={<AdminOrdersPage/>}/>
+                    <Route path="/my-calls" element={<LandingPage/>}/>
+                    <Route path="/managers-list" element={<LandingPage/>}/>
                 </Routes>
             </BrowserRouter>
         </div>

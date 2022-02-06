@@ -60,7 +60,7 @@ Http.api = {
 };
 
 Http.versions = {
-    v1: 'v1.1'
+    v1: 'v1.2'
 };
 
 export default Http;

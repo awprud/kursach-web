@@ -1,7 +1,7 @@
 import Http from "./HttpService";
 
-class AuthorsService extends Http {
-    BASE_URL = "/author";
+class AnketasService extends Http {
+    BASE_URL = "/anketa";
 
     getList() {
         return this.get(`${this.BASE_URL}/all`);
@@ -16,4 +16,4 @@ class AuthorsService extends Http {
     }
 }
 
-export default new AuthorsService();
+export default new AnketasService();
