@@ -21,7 +21,7 @@ const LandingPage = () => {
         <div className="page-landing">
             {booksAvailable.map((book) => {
                 return (
-                    <BookListCard book={book} role={user?.role || roleGuest} />
+                    <BookListCard book={book} user={user} />
                 )
             })}
         </div>

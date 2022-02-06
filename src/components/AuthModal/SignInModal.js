@@ -1,5 +1,5 @@
 import React from 'react';
-import {Field, Form, Formik} from "formik";
+import {ErrorMessage, Field, Form, Formik} from "formik";
 import AuthService from "../../services/AuthService";
 import "./index.css";
 import Modal from "../Modal/Modal";
@@ -11,7 +11,7 @@ const SignInModal = ({isOpen, toggle, setUser}) => {
             className="modal-auth"
         >
                 <Formik
-                    onSubmit={(values) => {
+                    onSubmit={(values, {setFieldError}) => {
                         const {password, email} = values;
                         AuthService.login({
                             password,
@@ -25,6 +25,9 @@ const SignInModal = ({isOpen, toggle, setUser}) => {
 
                                 toggle();
                                 window.location.reload();
+                            })
+                            .catch(() => {
+                                setFieldError('password', 'Password or email is incorrect');
                             })
                     }}
                     initialValues={{
@@ -44,6 +47,7 @@ const SignInModal = ({isOpen, toggle, setUser}) => {
                             type="text"
                             name="password"
                         />
+                        <ErrorMessage name="password" />
                         <button
                             type="submit"
                         >
