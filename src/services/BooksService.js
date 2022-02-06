@@ -12,8 +12,8 @@ class BooksService extends Http {
         return this.post(this.BASE_URL, dto);
     }
 
-    edit(localId, dto) {
-        return this.put(`${this.BASE_URL}/${localId}`, dto);
+    edit(dto) {
+        return this.put(`${this.BASE_URL}`, dto);
     }
 
     makeOrder(dto) {

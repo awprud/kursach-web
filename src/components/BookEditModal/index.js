@@ -32,9 +32,15 @@ const BookEditModal = ({isOpen, toggle, book, onClose}) => {
                 initialValues={book || INITIAL_VALUES}
                 onSubmit={(values) => {
                     if (editMode) {
-                        BooksService.put(values).then(toggle);
+                        BooksService.edit(values).then(() => {
+                            toggle();
+                            window.location.reload();
+                        });
                     } else {
-                        BooksService.create(values).then(toggle);
+                        BooksService.create(values).then(() => {
+                            toggle();
+                            window.location.reload();
+                        });
                     }
                 }}
                 onReset={onClose}
