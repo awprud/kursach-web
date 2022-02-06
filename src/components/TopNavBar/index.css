@@ -1,64 +1,46 @@
 .top-navigation {
     display: flex;
     overflow: hidden;
-    background-color: #333;
+    background-color: royalblue;
     top: 0;
     width: 100%;
-    height: 50px;
+    height: 70px;
+    align-items: center;
+}
+
+.top-navigation span {
     color: white;
-    direction: rtl;
 }
 
-.login-button {
-    margin-right: 40px;
-    margin-top: 7px;
-    background-color: azure;
+.center-group {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.signup-button, .login-button {
+    transition: color 300ms, background-color 300ms;
+    margin: 0 20px;
+    background-color: white;
     width: 130px;
     font-size: 16px;
     border: none;
+    border-radius: 5px;
+    padding: 10px;
 }
 
-.signup-button {
-    margin-top: 7px;
-    font-size: 16px;
-    margin-right: 65px;
-    background-color: azure;
-    width: 130px;
-    border: none;
-}
-
-.logout-button {
-    margin-right: 65px;
+.top-navigation button:hover {
+    color: white;
     background-color: transparent;
-    color: white;
-    font-size: 14px;
-    margin-top: 7px;
-    height: auto;
-    border: none;
-}
-
-.logout-button:hover {
-    text-decoration: underline;
+    transition: color 300ms, background-color 300ms;
     cursor: pointer;
 }
 
-.username, a {
-    margin-top: 12px;
-    margin-right: 15px;
-    font-size: 18px;
-    color: azure;
+.logo {
+    margin-left: 20px;
+    font-size: 40px;
+    font-style: italic;
+    text-decoration: underline white;
 }
-
-.username {
-    font-size: 20px;
-    font-weight: 500;
-}
-
-a {
-    color: white;
-    text-decoration: underline;
-}
-
 .main {
     margin-top: 30px;
 }

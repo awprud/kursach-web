@@ -1,6 +1,5 @@
 .page-landing {
     padding: 30px 100px;
-    background-color: #333333;
     height: 100%;
 }
 
@@ -32,16 +31,4 @@
 
 .add-book-button:hover {
     cursor: pointer;
-}
-
-.notification-success {
-    position: absolute;
-    background-color: aquamarine;
-    color: #333333;
-    padding: 15px 20px;
-    font-size: 22px;
-    right: 30px;
-    top: 30px;
-    border: 2px #333333 solid;
-    box-shadow:  10px 5px 5px #333333;
 }

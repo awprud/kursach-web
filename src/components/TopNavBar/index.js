@@ -3,8 +3,6 @@ import "./index.css"
 import SignInModal from "../AuthModal/SignInModal";
 import useModal from "../../hooks/useModal";
 import AuthService from "../../services/AuthService";
-import {Link} from "react-router-dom";
-import {roleAdmin, roleUser} from "../../constants";
 import SignUpModal from "../AuthModal/SignUpModal";
 
 const TopNavBar = () => {
@@ -25,37 +23,27 @@ const TopNavBar = () => {
                 setUser={setUser}
             />
             <div className="top-navigation">
-                {!user || !user.token ? (
-                    <>
-                        <button onClick={toggleSignup} className="signup-button">
-                            Sign up
-                        </button>
-                        <button onClick={toggle} className="login-button">
-                            Sign in
-                        </button>
-                    </>
-                ) : (
-                    <>
-                        <button
-                            onClick={() => {
-                                AuthService.signOut()
-                                setUser(null);
-                                window.location.reload();
-                            }}
-                            className="logout-button"
-                        >
-                            Log out
-                        </button>
-                        <span className="username">{user.username}</span>
-                        {user.role === roleUser &&
-                        <Link to="/my-orders/">Personal page</Link>
-                        }
-                        {user.role === roleAdmin &&
-                        <Link to="/dashboard-orders/">Orders dashboard</Link>
-                        }
-                        <Link to="/">Books dashboard</Link>
-                    </>
-                )}
+                <div className="logo">
+                    <span>MtoM</span>
+                </div>
+                <div className="center-group">
+                    <button onClick={toggleSignup} className="signup-button">
+                        Sign up
+                    </button>
+                    <span>or</span>
+                    <button onClick={toggle} className="login-button">
+                        Sign in
+                    </button>
+                </div>
+                <div>
+                    <button
+                        onClick={toggleSignup}
+                        className="signup-button"
+                        hidden={!!user || !!user.token}
+                    >
+                        Log out
+                    </button>
+                </div>
             </div>
         </>
     );
