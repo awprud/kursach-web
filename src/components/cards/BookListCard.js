@@ -3,7 +3,7 @@ import "./index.css";
 import {roleAdmin, roleUser} from "../../constants";
 import BooksService from "../../services/BooksService";
 
-const BookListCard = ({user, book}) => {
+const BookListCard = ({user, book, handleEdit}) => {
     return (
         <div className="list-card-manager">
             <div>
@@ -40,7 +40,7 @@ const BookListCard = ({user, book}) => {
                             </button>
                         </>
                     ) : user?.role === roleAdmin ? (
-                        <button className="purchase-button">Edit</button>
+                        <button className="purchase-button" onClick={handleEdit}>Edit</button>
                     ) : null
                 }
             </div>

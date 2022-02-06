@@ -4,6 +4,7 @@ import SignInModal from "../AuthModal/SignInModal";
 import useModal from "../../hooks/useModal";
 import AuthService from "../../services/AuthService";
 import {Link} from "react-router-dom";
+import {roleAdmin, roleUser} from "../../constants";
 
 const TopNavBar = () => {
     const {isOpen, toggle} = useModal();
@@ -39,7 +40,12 @@ const TopNavBar = () => {
                             Log out
                         </button>
                         <span className="username">{user.username}</span>
+                        {user.role === roleUser &&
                         <Link to="/my-orders/">Personal page</Link>
+                        }
+                        {user.role === roleAdmin &&
+                        <Link to="/dashboard-orders/">Orders dashboard</Link>
+                        }
                     </>
                 )}
             </div>
