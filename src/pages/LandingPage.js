@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import "./index.css";
 import BookListCard from "../components/cards/BookListCard";
-import {booksAvailable} from '../mok/apiMokTemp';
-import {roleAdmin, roleGuest} from "../constants";
+import {roleAdmin} from "../constants";
 import AuthService from "../services/AuthService";
 import BooksService from "../services/BooksService";
 import BookEditModal from "../components/BookEditModal";
@@ -38,17 +37,20 @@ const LandingPage = () => {
                 />
             }
             <div className="page-landing">
-                {booksAvailable.map((book) => {
+                {books.map((book, index) => {
                     return (
-                        <BookListCard book={book} user={user} handleEdit={() => handleBookEdit(book)}/>
+                        <BookListCard key={index} book={book} user={user} handleEdit={() => handleBookEdit(book)}/>
                     )
                 })}
+                {user.role === roleAdmin &&
                 <div
                     className="add-book-button"
-                    onClick={toggle}
+                    onClick={() => {
+                        toggle();
+                    }}
                 >
                     <span>+</span>
-                </div>
+                </div>}
             </div>
         </>
     )

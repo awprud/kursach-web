@@ -25,6 +25,10 @@
     font-size: 22px;
 }
 
+.list-card-manager > div {
+    max-width: 70%;
+}
+
 .book-price {
     font-size: 22px;
     margin-right: 20px;

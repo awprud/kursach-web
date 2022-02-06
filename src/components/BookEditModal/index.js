@@ -1,19 +1,27 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Field, Form, Formik} from "formik";
 import "./index.css";
 import Modal from "../Modal/Modal";
 import BooksService from "../../services/BooksService";
+import AuthorsService from "../../services/AuthorsService";
 
 const INITIAL_VALUES = {
     name: '',
     year: '',
     pages: 0,
     price: '',
-    description: ''
+    description: '',
+    author: null,
 };
 
 const BookEditModal = ({isOpen, toggle, book, onClose}) => {
     const editMode = !!book;
+    const [authors, setAuthors] = useState([]);
+
+    useEffect(() => {
+        AuthorsService.getList()
+            .then(({data}) => setAuthors(data));
+    }, []);
 
     return (
         <Modal
@@ -70,6 +78,19 @@ const BookEditModal = ({isOpen, toggle, book, onClose}) => {
                             type="text"
                             name="description"
                         />
+                    </div>
+                    <div className="row">
+                        <label>Author</label>
+                        <Field
+                            as="select"
+                            name="author"
+                        >
+                            {authors.map((author) => {
+                                return (
+                                    <option key={`author-${author.id}`} value={author.id}>{author.name}</option>
+                                )
+                            })}
+                        </Field>
                     </div>
                     <button
                         type="submit"

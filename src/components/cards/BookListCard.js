@@ -13,7 +13,7 @@ const BookListCard = ({user, book, handleEdit}) => {
                 <span className="book-info">{book.description}</span>
             </div>
             <div>
-                <span className="book-price">{book.price}</span>
+                <span className="book-price">{book.price}$</span>
                 {
                     user?.role === roleUser ? (
                         <>
