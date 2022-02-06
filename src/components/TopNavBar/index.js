@@ -5,22 +5,29 @@ import useModal from "../../hooks/useModal";
 import AuthService from "../../services/AuthService";
 import {Link} from "react-router-dom";
 import {roleAdmin, roleUser} from "../../constants";
+import SignUpModal from "../AuthModal/SignUpModal";
 
 const TopNavBar = () => {
     const {isOpen, toggle} = useModal();
+    const {isOpen: isSignupOpen, toggle: toggleSignup} = useModal();
     const [user, setUser] = useState(AuthService.getUser());
 
     return (
-        <div>
+        <>
             <SignInModal
                 isOpen={isOpen}
                 toggle={toggle}
                 setUser={setUser}
             />
+            <SignUpModal
+                isOpen={isSignupOpen}
+                toggle={toggleSignup}
+                setUser={setUser}
+            />
             <div className="top-navigation">
                 {!user || !user.token ? (
                     <>
-                        <button className="signup-button">
+                        <button onClick={toggleSignup} className="signup-button">
                             Sign up
                         </button>
                         <button onClick={toggle} className="login-button">
@@ -50,7 +57,7 @@ const TopNavBar = () => {
                     </>
                 )}
             </div>
-        </div>
+        </>
     );
 }
 
