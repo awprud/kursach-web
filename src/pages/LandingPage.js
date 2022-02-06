@@ -46,6 +46,7 @@ const LandingPage = () => {
                 <div
                     className="add-book-button"
                     onClick={() => {
+                        window.scrollTo({top: 0});
                         toggle();
                     }}
                 >

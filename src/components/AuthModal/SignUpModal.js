@@ -66,7 +66,7 @@ const SignUpModal = ({isOpen, toggle, setUser}) => {
                     <button
                         type="submit"
                     >
-                        Login
+                        Register
                     </button>
                     <button
                         type="reset"

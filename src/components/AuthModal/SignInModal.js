@@ -44,7 +44,7 @@ const SignInModal = ({isOpen, toggle, setUser}) => {
                         />
                         <label>Password</label>
                         <Field
-                            type="text"
+                            type="password"
                             name="password"
                         />
                         <ErrorMessage name="password" />
