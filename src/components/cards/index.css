@@ -25,6 +25,10 @@
     font-size: 22px;
 }
 
+.quantity {
+    font-weight: 500;
+}
+
 .list-card-manager > div {
     max-width: 70%;
 }

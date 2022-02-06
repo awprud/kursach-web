@@ -7,19 +7,19 @@ const MyOrdersPage = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        setOrders(BooksService.getOrdersList())
-            // TODO
-            // .then(({data}) => {
-            //     setOrders(data);
-            // });
+        BooksService.getOrdersList()
+            .then(({data}) => {
+                console.log(data)
+                setOrders(data);
+            });
     }, []);
 
     return (
         <div className="page-landing page-orders">
             <h1>My orders</h1>
-            {orders.map((order) => {
+            {orders.map((order, index) => {
                 return (
-                    <BookOrderCard order={order} />
+                    <BookOrderCard key={`order-${index}`} order={order}/>
                 )
             })}
         </div>

@@ -2,18 +2,18 @@ import React from 'react';
 import "./index.css";
 
 const BookOrderCard = ({order}) => {
-    const {book} = order;
+    const {book, author, status, price, quantity} = order;
 
     return (
         <div className="list-card-manager">
             <div>
-                <span className="book-info">{book.name} •</span>
-                <span className="book-info">{book.year} •</span>
-                <span className="book-info">{book.pages} •</span>
-                <span className="book-info">{book.description}</span>
+                <span className="book-info">{book} •</span>
+                <span className="book-info">{author} </span>
+                <span className="book-info quantity">x{quantity}</span>
             </div>
             <div>
-                <span className="book-price">{order.status}</span>
+                <span className="book-price">{price}$</span>
+                <span className="book-info">{status}</span>
             </div>
         </div>
     )

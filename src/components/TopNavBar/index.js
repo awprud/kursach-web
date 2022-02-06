@@ -46,6 +46,7 @@ const TopNavBar = () => {
                         {user.role === roleAdmin &&
                         <Link to="/dashboard-orders/">Orders dashboard</Link>
                         }
+                        <Link to="/">Books dashboard</Link>
                     </>
                 )}
             </div>

@@ -9,6 +9,7 @@ const interceptorsRequest = [
         }
 
         request.headers = {
+            'Access-Control-Allow-Origin': '*',
             Authorization: access_token ? `Bearer ${access_token}` : "",
         };
 
