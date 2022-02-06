@@ -34,6 +34,7 @@ const LandingPage = () => {
                     book={editingBook}
                     isOpen={isOpen}
                     toggle={toggle}
+                    onClose={() => setEditingBook(null)}
                 />
             }
             <div className="page-landing">
@@ -42,6 +43,12 @@ const LandingPage = () => {
                         <BookListCard book={book} user={user} handleEdit={() => handleBookEdit(book)}/>
                     )
                 })}
+                <div
+                    className="add-book-button"
+                    onClick={toggle}
+                >
+                    <span>+</span>
+                </div>
             </div>
         </>
     )

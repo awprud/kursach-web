@@ -12,7 +12,7 @@ const INITIAL_VALUES = {
     description: ''
 };
 
-const BookEditModal = ({isOpen, toggle, book}) => {
+const BookEditModal = ({isOpen, toggle, book, onClose}) => {
     const editMode = !!book;
 
     return (
@@ -29,6 +29,7 @@ const BookEditModal = ({isOpen, toggle, book}) => {
                         BooksService.create(values).then(toggle);
                     }
                 }}
+                onReset={onClose}
             >
                 <Form className="book-form">
                     <h2>{editMode ? 'Edit book' : 'Create book'}</h2>
