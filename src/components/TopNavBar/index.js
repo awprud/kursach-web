@@ -27,22 +27,42 @@ const TopNavBar = () => {
                     <span>MtoM</span>
                 </div>
                 <div className="center-group">
-                    <button onClick={toggleSignup} className="signup-button">
-                        Sign up
-                    </button>
-                    <span>or</span>
-                    <button onClick={toggle} className="login-button">
-                        Sign in
-                    </button>
-                </div>
-                <div>
+                    <span
+                        hidden={!user || !user.token}
+                    >
+                        {user.username}
+                    </span>
                     <button
                         onClick={toggleSignup}
                         className="signup-button"
-                        hidden={!!user || !!user.token}
+                        hidden={!!user && !!user.token}
+                    >
+                        Sign up
+                    </button>
+                    <span
+                        hidden={!!user && !!user.token}
+                    >
+                        or
+                    </span>
+                    <button
+                        onClick={toggle}
+                        className="login-button"
+                        hidden={!!user && !!user.token}
+                    >
+                        Sign in
+                    </button>
+                    <button
+                        onClick={() => {
+                            AuthService.signOut();
+                            window.location.reload();
+                        }}
+                        className="signup-button"
+                        hidden={!user || !user.token}
                     >
                         Log out
                     </button>
+                </div>
+                <div>
                 </div>
             </div>
         </>
