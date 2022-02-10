@@ -39,3 +39,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
+.anketa-list {
+    display: flex;
+    width: 100%;
+}

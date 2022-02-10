@@ -1,8 +1,7 @@
 import React from 'react';
 import "./index.css";
 
-const ManagerCard = ({manager, user}) => {
-    console.log(manager)
+const ManagerCard = ({manager}) => {
     return (
         <div className="card-manager">
             <img src={manager.photo} alt="Manager"/>
