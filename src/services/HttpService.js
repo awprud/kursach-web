@@ -56,7 +56,7 @@ class Http {
 }
 
 Http.api = {
-    common: 'https://25f9-37-73-40-178.ngrok.io/api'
+    common: 'http://localhost:9999/api'
 };
 
 Http.versions = {
