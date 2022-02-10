@@ -1,10 +1,13 @@
 import Http from './HttpService';
+import {roleGuest} from "../constants";
 
 class AuthService extends Http {
     getUser() {
+        const user = window.localStorage.getItem('user');
+
         return {
             token: window.localStorage.getItem('access_token'),
-            ...JSON.parse(window.localStorage.getItem('user') || "{}")
+            ...JSON.parse(user || `{"role": "${roleGuest}"}`)
         };
     }
 

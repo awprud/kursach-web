@@ -1,0 +1,23 @@
+.card-manager {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    background-color: #61dafb;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.card-manager img {
+    max-height: 100px;
+    border-radius: 5px;
+}
+
+.card-manager > div {
+    margin: auto;
+}
+
+.card-manager > div > h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
